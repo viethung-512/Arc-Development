@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 // MUI stuff
@@ -60,7 +59,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function Footer({ setTabValue, setSelectedIndex }) {
+function Footer(props) {
   const classes = useStyles();
 
   return (
@@ -69,13 +68,7 @@ function Footer({ setTabValue, setSelectedIndex }) {
         <Grid container className={classes.mainContainer} justify='center'>
           <Grid item className={classes.gridItem}>
             <Grid container direction='column' spacing={2}>
-              <Grid
-                item
-                className={classes.link}
-                component={Link}
-                to='/'
-                onClick={() => setTabValue(0)}
-              >
+              <Grid item className={classes.link} component={Link} to='/'>
                 Home
               </Grid>
             </Grid>
@@ -88,10 +81,6 @@ function Footer({ setTabValue, setSelectedIndex }) {
                 className={classes.link}
                 component={Link}
                 to='/services'
-                onClick={() => {
-                  setTabValue(1);
-                  setSelectedIndex(0);
-                }}
               >
                 Services
               </Grid>
@@ -100,10 +89,6 @@ function Footer({ setTabValue, setSelectedIndex }) {
                 className={classes.link}
                 component={Link}
                 to='/custom-software'
-                onClick={() => {
-                  setTabValue(1);
-                  setSelectedIndex(1);
-                }}
               >
                 Custom Software Development
               </Grid>
@@ -112,10 +97,6 @@ function Footer({ setTabValue, setSelectedIndex }) {
                 className={classes.link}
                 component={Link}
                 to='/mobile-apps'
-                onClick={() => {
-                  setTabValue(1);
-                  setSelectedIndex(2);
-                }}
               >
                 Mobile App Development
               </Grid>
@@ -124,10 +105,6 @@ function Footer({ setTabValue, setSelectedIndex }) {
                 className={classes.link}
                 component={Link}
                 to='/websites'
-                onClick={() => {
-                  setTabValue(1);
-                  setSelectedIndex(3);
-                }}
               >
                 Websites Development
               </Grid>
@@ -141,7 +118,6 @@ function Footer({ setTabValue, setSelectedIndex }) {
                 className={classes.link}
                 component={Link}
                 to='/revolutions'
-                onClick={() => setTabValue(2)}
               >
                 The Revolutions
               </Grid>
@@ -150,7 +126,6 @@ function Footer({ setTabValue, setSelectedIndex }) {
                 className={classes.link}
                 component={Link}
                 to='/revolutions'
-                onClick={() => setTabValue(2)}
               >
                 Vision
               </Grid>
@@ -159,7 +134,6 @@ function Footer({ setTabValue, setSelectedIndex }) {
                 className={classes.link}
                 component={Link}
                 to='/revolutions'
-                onClick={() => setTabValue(2)}
               >
                 Technology
               </Grid>
@@ -168,7 +142,6 @@ function Footer({ setTabValue, setSelectedIndex }) {
                 className={classes.link}
                 component={Link}
                 to='/revolutions'
-                onClick={() => setTabValue(2)}
               >
                 Progress
               </Grid>
@@ -177,31 +150,13 @@ function Footer({ setTabValue, setSelectedIndex }) {
 
           <Grid item className={classes.gridItem}>
             <Grid container direction='column' spacing={2}>
-              <Grid
-                item
-                className={classes.link}
-                component={Link}
-                to='/about'
-                onClick={() => setTabValue(3)}
-              >
+              <Grid item className={classes.link} component={Link} to='/about'>
                 About Us
               </Grid>
-              <Grid
-                item
-                className={classes.link}
-                component={Link}
-                to='/about'
-                onClick={() => setTabValue(3)}
-              >
+              <Grid item className={classes.link} component={Link} to='/about'>
                 History
               </Grid>
-              <Grid
-                item
-                className={classes.link}
-                component={Link}
-                to='/about'
-                onClick={() => setTabValue(3)}
-              >
+              <Grid item className={classes.link} component={Link} to='/about'>
                 Team
               </Grid>
             </Grid>
@@ -214,7 +169,6 @@ function Footer({ setTabValue, setSelectedIndex }) {
                 className={classes.link}
                 component={Link}
                 to='/contact'
-                onClick={() => setTabValue(4)}
               >
                 Contact Us
               </Grid>
@@ -265,9 +219,6 @@ function Footer({ setTabValue, setSelectedIndex }) {
   );
 }
 
-Footer.propTypes = {
-  setTabValue: PropTypes.func.isRequired,
-  setSelectedIndex: PropTypes.func.isRequired,
-};
+Footer.propTypes = {};
 
 export default Footer;

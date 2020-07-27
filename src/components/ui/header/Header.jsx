@@ -48,7 +48,13 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function Header({ tabValue, selectedIndex, setTabValue, setSelectedIndex }) {
+function Header({
+  tabValue,
+  selectedIndex,
+  setTabValue,
+  setSelectedIndex,
+  isEstimatePage,
+}) {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -66,6 +72,7 @@ function Header({ tabValue, selectedIndex, setTabValue, setSelectedIndex }) {
       selectedIndex={selectedIndex}
       tabValue={tabValue}
       changeSelectedMenu={handleChangeSelectedMenu}
+      isEstimatePage={isEstimatePage}
     />
   );
 
@@ -97,6 +104,11 @@ Header.propTypes = {
   selectedIndex: PropTypes.number.isRequired,
   setTabValue: PropTypes.func.isRequired,
   setSelectedIndex: PropTypes.func.isRequired,
+  isEstimatePage: PropTypes.bool.isRequired,
+};
+
+Header.defaultProps = {
+  isEstimatePage: false,
 };
 
 export default Header;

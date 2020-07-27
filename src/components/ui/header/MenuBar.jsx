@@ -24,9 +24,12 @@ const useStyles = makeStyles(theme => ({
   button: {
     ...theme.typography.estimate,
     borderRadius: 50,
-    marginLeft: 50,
+    // marginLeft: 50,
     marginRight: 25,
     height: 45,
+    '&:hover': {
+      backgroundColor: theme.palette.secondary.light,
+    },
   },
   menu: {
     backgroundColor: theme.palette.common.blue,
@@ -42,7 +45,13 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function MenuBar({ tabValue, changeTab, changeSelectedMenu, selectedIndex }) {
+function MenuBar({
+  tabValue,
+  changeTab,
+  changeSelectedMenu,
+  selectedIndex,
+  isEstimatePage,
+}) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const [openServiceMenu, setOpenServiceMenu] = useState(false);
@@ -94,16 +103,26 @@ function MenuBar({ tabValue, changeTab, changeSelectedMenu, selectedIndex }) {
             />
           )
         )}
+        <Tab
+          className={classes.tab}
+          disableRipple
+          style={{ opacity: 1 }}
+          label={
+            <Button
+              variant='contained'
+              color='secondary'
+              className={classes.button}
+              component={Link}
+              to='/estimate'
+              onClick={() => {
+                changeSelectedMenu(5);
+              }}
+            >
+              Free Estimate
+            </Button>
+          }
+        />
       </Tabs>
-      <Button
-        variant='contained'
-        color='secondary'
-        className={classes.button}
-        component={Link}
-        to='/estimate'
-      >
-        Free Estimate
-      </Button>
       <Menu
         id='simple-menu'
         anchorEl={anchorEl}
@@ -115,18 +134,22 @@ function MenuBar({ tabValue, changeTab, changeSelectedMenu, selectedIndex }) {
         classes={{ paper: classes.menu }}
         elevation={0}
       >
-        {serviceOptions.map(({ label, path }, index) => (
-          <MenuItem
-            key={index}
-            onClick={() => handleMenuItemClick(index)}
-            component={Link}
-            to={path}
-            classes={{ root: classes.menuItem }}
-            selected={index === selectedIndex && tabValue === 1}
-          >
-            {label}
-          </MenuItem>
-        ))}
+        {serviceOptions.map(({ label, path }, index) => {
+          return (
+            <MenuItem
+              key={index}
+              onClick={() => handleMenuItemClick(index)}
+              component={Link}
+              to={path}
+              classes={{ root: classes.menuItem }}
+              selected={
+                !isEstimatePage && index === selectedIndex && tabValue === 1
+              }
+            >
+              {label}
+            </MenuItem>
+          );
+        })}
       </Menu>
     </Fragment>
   );
@@ -137,6 +160,11 @@ MenuBar.propTypes = {
   changeTab: PropTypes.func.isRequired,
   changeSelectedMenu: PropTypes.func.isRequired,
   selectedIndex: PropTypes.number.isRequired,
+  isEstimatePage: PropTypes.bool.isRequired,
+};
+
+MenuBar.defaultProps = {
+  isEstimatePage: false,
 };
 
 export default MenuBar;
