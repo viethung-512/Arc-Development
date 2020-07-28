@@ -1,14 +1,13 @@
 import React, { Fragment } from 'react';
 
 // MUI stuff
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import customSoftwareIcon from '../../../../assets/Custom Software Icon.svg';
 import mobileAppsIcon from '../../../../assets/mobileIcon.svg';
 import websiteIcon from '../../../../assets/websiteIcon.svg';
-import ServiceItem from './ServiceItem';
+import ServiceItem from '../service-page/ServiceItem';
 
 const useStyles = makeStyles(theme => ({
   servicesContainer: {
@@ -34,8 +33,6 @@ const useStyles = makeStyles(theme => ({
 
 function ServicesBlock(props) {
   const classes = useStyles();
-  const theme = useTheme();
-  const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Grid container direction='column' className={classes.servicesContainer}>
@@ -67,7 +64,7 @@ function ServicesBlock(props) {
               subtitle2={
                 <Fragment>
                   Integrate your web experience or create a standalone app{' '}
-                  {matchesSM && <br />}
+                  <br />
                   with either mobile platform.
                 </Fragment>
               }
@@ -88,7 +85,7 @@ function ServicesBlock(props) {
               subtitle2={
                 <Fragment>
                   Optimized for Search Engines,
-                  {matchesSM && <br />} built for speed.
+                  <br /> built for speed.
                 </Fragment>
               }
               image={websiteIcon}

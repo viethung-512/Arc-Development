@@ -8,7 +8,7 @@ import Header from './ui/header/Header';
 import Footer from './ui/footer/Footer';
 import LandingPage from './ui/pages/landing-page/LandingPage';
 import ServicePage from './ui/pages/service-page/ServicePage';
-import CustomSoftware from './ui/pages/service-page/ CustomSoftware';
+import CustomSoftware from './ui/pages/service-page/CustomSoftware';
 import MobileApps from './ui/pages/service-page/MobileApps';
 import Websites from './ui/pages/service-page/Websites';
 import RevolutionsPage from './ui/pages/revolutions-page/RevolutionsPage';

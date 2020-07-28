@@ -50,10 +50,9 @@ function ServiceItem({
       justify={
         matchesSM ? 'center' : placementFirst ? 'flex-start' : 'flex-end'
       }
-      // spacing={2}
       className={classes.serviceContainer}
     >
-      <Grid item>
+      <Grid item style={matchesSM ? undefined : { width: '35em' }}>
         <Typography variant='h4'>{title}</Typography>
         <Typography variant='subtitle1' className={classes.subtitle}>
           {subtitle1}
@@ -74,8 +73,8 @@ function ServiceItem({
           />
         </Button>
       </Grid>
-      <Grid item>
-        <img src={image} alt={title} />
+      <Grid item style={{ width: 150, marginLeft: 12 }}>
+        <img src={image} alt={title} style={{ width: '100%' }} />
       </Grid>
     </Grid>
   );

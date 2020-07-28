@@ -52,6 +52,11 @@ const theme = createMuiTheme({
       fontWeight: 300,
       color: 'white',
     },
+    body1: {
+      fontSize: '1.25rem',
+      color: arcGray,
+      fontWeight: 300,
+    },
     estimate: {
       fontFamily: 'Pacifico',
       fontSize: '1rem',

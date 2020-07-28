@@ -39,6 +39,7 @@ const useStyles = makeStyles(theme => ({
   menuItem: {
     ...theme.typography.tab,
     opacity: 0.7,
+    color: 'white',
     '&:hover': {
       opacity: 1,
     },
