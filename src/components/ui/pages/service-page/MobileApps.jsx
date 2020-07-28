@@ -80,7 +80,7 @@ function MobileApps({ setTabValue, setSelectedIndex }) {
 
   const init = () => {
     setTabValue(1);
-    setSelectedIndex(1);
+    setSelectedIndex(2);
   };
   return (
     <Grid direction='column' container>

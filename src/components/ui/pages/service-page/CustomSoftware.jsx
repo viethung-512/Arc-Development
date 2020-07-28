@@ -561,7 +561,7 @@ function CustomSoftware({ setTabValue, setSelectedIndex }) {
                 <Grid item>
                   <Lottie
                     options={uxOptions}
-                    style={{ maxHeight: 465, maxWidth: 275, minHeight: 275 }}
+                    style={{ maxHeight: 550, maxWidth: 275, minHeight: 275 }}
                   />
                 </Grid>
               </Grid>
