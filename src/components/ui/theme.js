@@ -72,6 +72,11 @@ const theme = createMuiTheme({
       fontFamily: 'Roboto',
       fontWeight: 'bold',
     },
+    caption: {
+      fontSize: '1rem',
+      fontWeight: '300',
+      color: arcGray,
+    },
   },
 });
 
