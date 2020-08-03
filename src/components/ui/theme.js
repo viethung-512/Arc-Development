@@ -78,6 +78,39 @@ const theme = createMuiTheme({
       color: arcGray,
     },
   },
+  overrides: {
+    MuiInputLabel: {
+      root: {
+        color: arcBlue,
+        fontSize: '1rem',
+      },
+    },
+    MuiInput: {
+      root: {
+        color: arcGray,
+        fontWeight: 300,
+      },
+      underline: {
+        '&:before': {
+          borderBottom: `2px solid ${arcBlue}`,
+        },
+        '&:hover:not($disabled):not($focused):not($error):before': {
+          borderBottom: `2px solid ${arcBlue}`,
+        },
+      },
+    },
+  },
+  custom: {
+    buttonCircularProgress: {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  },
 });
 
 export default theme;
